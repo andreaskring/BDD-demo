@@ -6,4 +6,4 @@ USERS = {}
 
 @app.route('/user/<username>')
 def get_user(username):
-    return flask.jsonify({'name': 'Chuck Norris'})
+    return flask.jsonify(USERS[username])

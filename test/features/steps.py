@@ -13,12 +13,14 @@ def before_all():
 
 @step(u"Given some users are in the system")
 def given_some_users_are_in_the_system(step):
-    # USERS.update({
-    #     'chuck': {
-    #         'name': 'Chuck Norris'
-    #     }
-    # })
-    pass
+    USERS.update({
+        'chuck': {
+            'name': 'Chuck Norris'
+        },
+        'bruce': {
+            'name': 'Bruce Lee'
+        }
+    })
 
 
 @step(u"When I retrieve the customer '(.*)'")
