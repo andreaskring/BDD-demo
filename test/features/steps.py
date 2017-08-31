@@ -33,3 +33,13 @@ def then_i_should_get_a_xyz_response(step, expected_status_code):
 @step(u"And the following user details are returned:")
 def and_the_following_user_details(step):
     assert_equals(step.hashes, [json.loads(world.response.data)])
+
+
+@step(u"When I add a new user with id '(.*)' and name '(.*)'")
+def when_i_add_a_new_user(step, id, name):
+    world.response = world.app.post('/user', data=json.dumps(
+        {
+            'id': id,
+            'name': name
+        }
+    ), content_type='application/json')
